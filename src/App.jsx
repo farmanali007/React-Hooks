@@ -1,11 +1,24 @@
+import { useState } from 'react'
+import HookHub from './components/HookHub/HookHub'
+import UseStateLearningLab from './components/useState/UseStateLearningLab'
 import UseMemoLearningLab from './components/useMemo/UseMemoLearningLab'
 
 /**
- * Main app — the useMemo interactive course.
- * Run: npm run dev → open http://localhost:5173
+ * React Hooks Learning Platform
+ * Hub → pick a hook → interactive lessons
  */
 function App() {
-  return <UseMemoLearningLab />
+  const [activeHook, setActiveHook] = useState(null)
+
+  if (activeHook === 'useState') {
+    return <UseStateLearningLab onBack={() => setActiveHook(null)} />
+  }
+
+  if (activeHook === 'useMemo') {
+    return <UseMemoLearningLab onBack={() => setActiveHook(null)} />
+  }
+
+  return <HookHub onSelectHook={setActiveHook} />
 }
 
 export default App

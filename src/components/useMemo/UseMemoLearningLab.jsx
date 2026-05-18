@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import './useMemoLab.css'
-
+import LearningLabShell from '../shared/LearningLabShell'
 import BasicExample from './BasicExample'
 import ExpensiveCalculation from './ExpensiveCalculation'
 import FilterList from './FilterList'
@@ -27,40 +25,14 @@ const LESSONS = [
   { id: 'dashboard', label: '11. Dashboard', level: 'advanced', Component: DashboardExample },
 ]
 
-export default function UseMemoLearningLab() {
-  const [activeId, setActiveId] = useState('basic')
-  const active = LESSONS.find((l) => l.id === activeId) ?? LESSONS[0]
-  const ActiveComponent = active.Component
-
+export default function UseMemoLearningLab({ onBack }) {
   return (
-    <div className="use-memo-lab">
-      <aside className="lab-sidebar">
-        <h1>useMemo Course</h1>
-        <p className="lab-intro">
-          Open DevTools Console (F12) before each lesson. Every example compares
-          <strong> without</strong> vs <strong>with</strong> useMemo side by side.
-        </p>
-        <nav>
-          <ul>
-            {LESSONS.map((lesson) => (
-              <li key={lesson.id}>
-                <button
-                  type="button"
-                  className={lesson.id === activeId ? 'active' : ''}
-                  onClick={() => setActiveId(lesson.id)}
-                >
-                  {lesson.label}
-                  <span className={`nav-level level-${lesson.level}`}>{lesson.level}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </aside>
-
-      <main className="lab-main">
-        <ActiveComponent key={activeId} />
-      </main>
-    </div>
+    <LearningLabShell
+      title="useMemo Course"
+      intro="Open DevTools Console (F12). Every comparison lesson shows WITHOUT useMemo vs WITH useMemo side by side."
+      comparisonHint="Red panel = no memoization. Green panel = useMemo with dependency array."
+      lessons={LESSONS}
+      onBack={onBack}
+    />
   )
 }

@@ -1,4 +1,21 @@
-# useMemo Interactive Course (React + Vite)
+# React Hooks Interactive Course (React + Vite)
+
+A beginner-friendly, hands-on platform to learn React hooks through runnable demos. Pick a hook from the home screen, then work through side-by-side lessons with console logs and render counters.
+
+**Available hooks:** `useState` · `useMemo` (more coming soon)
+
+## How to start
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 → choose **useState** or **useMemo** from the hook list.
+
+---
+
+# useMemo
 
 A beginner-friendly, hands-on course on React's `useMemo` hook — built directly into this project as runnable demos.
 
@@ -85,7 +102,15 @@ Open **http://localhost:5173** in your browser.
 2. Read the analogy and "What to observe" box
 3. Click buttons in order suggested below
 
-### Recommended order
+### useState learning order
+
+1. **`useState/BasicCounter.jsx`** — Plain variable vs useState
+2. **`ControlledInput.jsx`** — Controlled inputs
+3. **`ObjectState.jsx`** / **`ArrayState.jsx`** — Immutable updates
+4. **`FunctionalUpdate.jsx`** — `setCount(c => c + 1)`
+5. **`FormExample.jsx`** — Real-world form
+
+### useMemo learning order
 
 1. **`BasicExample.jsx`** — Start here. See expensive work skip when only unrelated state changes.
 2. **`ExpensiveCalculation.jsx`** — Feel UI lag without memoization.
@@ -109,8 +134,11 @@ Detailed notes: [`src/components/useMemo/README_GUIDE.md`](src/components/useMem
 
 ```
 src/
-├── App.jsx                          # Loads the learning lab
+├── App.jsx                          # Hook hub → routes to each course
 └── components/
+    ├── HookHub/                     # Home screen — pick a hook
+    ├── shared/                      # Shared layouts, render counter, lab shell
+    ├── useState/                    # useState course (7 lessons)
     └── useMemo/
         ├── UseMemoLearningLab.jsx   # Navigation + lesson router
         ├── useMemoLab.css
