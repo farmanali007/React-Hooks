@@ -2,7 +2,7 @@
 
 A beginner-friendly, hands-on platform to learn React hooks through runnable demos. Pick a hook from the home screen, then work through side-by-side lessons with console logs and render counters.
 
-**Available hooks:** `useState` · `useMemo` (more coming soon)
+**All 18 official React hooks** — each with interactive lessons (useState, useEffect, useContext, useReducer, useRef, useMemo, useCallback, useLayoutEffect, useInsertionEffect, useImperativeHandle, useDebugValue, useDeferredValue, useTransition, useId, useSyncExternalStore, useOptimistic, useActionState, useFormStatus)
 
 ## How to start
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 → choose **useState** or **useMemo** from the hook list.
+Open http://localhost:5173 → pick any hook from the categorized list on the home screen.
 
 ---
 
@@ -136,10 +136,29 @@ Detailed notes: [`src/components/useMemo/README_GUIDE.md`](src/components/useMem
 src/
 ├── App.jsx                          # Hook hub → routes to each course
 └── components/
-    ├── HookHub/                     # Home screen — pick a hook
+    ├── HookHub/                     # Home screen — pick a hook (18 hooks, categorized)
     ├── shared/                      # Shared layouts, render counter, lab shell
-    ├── useState/                    # useState course (7 lessons)
-    └── useMemo/
+    ├── useState/                    # 7 lessons
+    ├── useEffect/                   # 6 lessons
+    ├── useContext/                  # 5 lessons
+    ├── useReducer/                  # 5 lessons
+    ├── useRef/                      # 5 lessons
+    ├── useMemo/                     # 11 lessons
+    ├── useCallback/                 # 5 lessons
+    ├── useLayoutEffect/             # 4 lessons
+    ├── useInsertionEffect/          # 3 lessons
+    ├── useImperativeHandle/         # 4 lessons
+    ├── useDebugValue/               # 3 lessons
+    ├── useDeferredValue/            # 4 lessons
+    ├── useTransition/               # 4 lessons
+    ├── useId/                       # 3 lessons
+    ├── useSyncExternalStore/        # 4 lessons
+    ├── useOptimistic/               # 4 lessons (React 19)
+    ├── useActionState/              # 4 lessons (React 19)
+    └── useFormStatus/               # 3 lessons (React 19)
+├── hooks/
+│   ├── hookRegistry.js              # All hook metadata for the hub
+│   └── hookLabs.js                  # Routes hook id → Learning Lab
         ├── UseMemoLearningLab.jsx   # Navigation + lesson router
         ├── useMemoLab.css
         ├── BasicExample.jsx
